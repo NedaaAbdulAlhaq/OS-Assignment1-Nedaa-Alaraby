@@ -147,10 +147,12 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
+      private static int counterContextSwitches=0;
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
         int studentID = 446052622;  // ← CHANGE THIS TO YOUR ACTUAL STUDENT ID
+      
         
         Random random = new Random(studentID);
         
@@ -239,6 +241,8 @@ public class SchedulerSimulation {
             System.out.println(Colors.BRIGHT_WHITE + "]" + Colors.RESET);
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
             
+                counterContextSwitches++;//Increment the counter each time a new process starts running
+
             // Start the thread, which will run the process for one time quantum
             currentThread.start();
             
@@ -269,16 +273,21 @@ public class SchedulerSimulation {
         }
         
         // End of the scheduler simulation
+
+        
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
                           "╔════════════════════════════════════════════════════════════════════════════════╗" + 
                           Colors.RESET);
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + "║" + Colors.RESET + 
                           Colors.BG_GREEN + Colors.WHITE + Colors.BOLD + 
                           "                     ✓  ALL PROCESSES COMPLETED  ✓                            " + 
+                          
                           Colors.RESET + Colors.BOLD + Colors.BRIGHT_GREEN + "║" + Colors.RESET);
-        System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
+                          System.out.println( "\n"+"Total context switches:"+counterContextSwitches );
+        System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN +
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
-                          Colors.RESET + "\n");
+                          Colors.RESET +"\n");
+                          
     }
     
     // Method to add a process to the queue and map, while printing a "ready" message
