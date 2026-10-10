@@ -29,11 +29,11 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [Nedaa AbdulAlhaq Alaraby] |
+| **Student ID** | [446052622] |
+| **University Email** | [446052622]@std.psau.edu.sa |
+| **GitHub Username** | [NedaaAbdulAlhaq] |
+| **Repository Link** | [https://github.com/NedaaAbdulAlhaq/OS-Assignment1-Nedaa-Alaraby] |
  
 ---
 
@@ -129,81 +129,109 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
+### Entry 1 - [October 4, 2026 – 9:30 PM]
 **What I did**:
+I opened the assignment for the first time, read the instructions, and changed my student ID. Then I made my first commit.
 
 **Details**:
+When I first opened the assignment, I spent time trying to understand the idea of the scheduler and what the project was asking me to do. I logged into GitHub, accessed the repository, and looked through the starter code to see how everything was structured. After that, I changed my student ID as required and pushed my first commit. Then I realized that editing directly on GitHub wasn’t practical, so I downloaded Visual Studio Code and installed Git and the needed extensions. Setting up VS Code took some time because I had to connect it to my GitHub account and make sure everything was configured correctly before I could continue working.
 
 **Challenges**:
+It was difficult to follow the steps exactly as written. I kept doing extra actions or installing things I didn’t actually need, which made me confused and slowed me down.
 
 **Solution**:
 
+I went back and re-read the instructions carefully until I understood the correct workflow. Once I followed the steps properly, everything became clearer and I was able to continue .
+
 **Time spent**:
+5 hours.
 
 ---
 
-### Entry 2 - [Date and Time]
+### Entry 2 - [October 5, 2026 – 11:00 PM]
 **What I did**:
+I started working on the coding part of the assignment, tried to understand the initial structure of the program, and added Feature 1 (priority). After testing that the code worked correctly, I made my second commit.
 
 **Details**:
+When I opened the code, I spent time trying to understand how the classes were connected and how the scheduler was organized. I added a new variable called priority and defined it as a random number between 1 and 10. Then I made sure that the priority value appears for each process when it enters the ready queue. At first, I wasn’t sure where exactly I should place the priority—whether inside the main method or inside the constructor. After thinking about it, I realized that the constructor is responsible for defining each process, so the priority logically belongs there. Once I confirmed the code was running correctly, I committed the changes.
 
 **Challenges**:
+I was unsure about the correct place to generate and store the priority value, and I didn’t want to break the structure of the program.
 
 **Solution**:
+I reviewed how the constructor works and understood that it initializes all process-related properties, so placing the priority there was the right decision. 
 
 **Time spent**:
+1 hour 30 minutes. 
+---
+
+### Entry 3 - [October 6, 2026 – 12:30 AM]
+**What I did**:
+I started working on Feature 2 (context switches) and made my third commit after confirming the feature was working correctly.
+**Details**:
+I added a new variable called counterContextSwitches to keep track of how many times the CPU switches from one thread to another. Then I incremented this counter every time a new thread started running. After that, I printed the final number of context switches at the end of the simulation and tested the program several times to make sure the value changed correctly based on the number of processes. At first, I wasn’t sure where exactly to place the increment—whether before start() or after join(). I tried both options multiple times, and eventually realized that the correct place was before calling start(), because that’s when the CPU actually switches to a new process.
+
+**Challenges**:
+I didn’t know the correct moment to count a context switch, and placing it in the wrong spot gave inaccurate results.
+
+**Solution**:
+Through testing and re-reading the code flow, I understood that the switch happens right before the thread starts, so I placed the increment there.
+
+**Time spent**:
+ 2hour.
+---
+
+### Entry 4 - [October 9, 2026 – 2:00 AM]
+**What I did**:
+I started working on Feature 3 to calculate the waiting time and generate a summary table for all processes. I tested the code repeatedly until everything worked correctly.
+
+**Details**:
+I added the variables creationTime, lastEnqueueTime, and Totalwaitingtime inside the constructor so each process could track its timing information. Then I calculated the waiting time using System.currentTimeMillis() and updated lastEnqueueTime every time the process re-entered the ready queue. After that, I implemented the methods getwaitingtime() and getTurnaroundTime() to return the correct values for each process. The most difficult part was understanding how waiting time should be calculated and where exactly to update the timing values in the code. I also struggled with the final printing because the processes were repeating in the table and the formatting was messy, which caused several errors. I kept testing and adjusting the code until I found the right place to update the waiting time and fixed the printing logic.
+
+**Challenges**:
+Understanding the waiting time logic and fixing the repeated rows in the summary table was confusing and caused multiple errors.
+
+**Solution**:
+I tested the code step by step, re-read the scheduling flow, and kept adjusting the timing updates until the waiting time and table output became correct.
+
+**Time spent**:
+ 3 hour.
 
 ---
 
-### Entry 3 - [Date and Time]
+### Entry 5 - [October 10, 2026 – 3:30 AM]
 **What I did**:
+I continued working on Feature 3 and fixed the issue of repeated processes in the final summary table. After confirming the output was correct, I made the commit.
 
 **Details**:
+While printing the final summary table, I noticed that the same process appeared multiple times, and the rows were messy and not aligned. The problem was that I was printing directly from the map, which created duplicates every time a process re-entered the ready queue. To fix this, I added an ArrayList to store each process only once when it was first created. Then I used this list in the final printing instead of the map. After updating the printing format with printf, the table became clean, organized, and without duplicates. Once everything looked correct and the waiting and turnaround times were accurate, I committed the changes.
 
 **Challenges**:
+The repeated rows and messy formatting made the table confusing, and it took time to understand why the processes were duplicated.
 
 **Solution**:
+I added a separate list to store unique processes and used it for the final output, which solved the duplication problem completely.
 
 **Time spent**:
+1 hour.
 
 ---
 
-### Entry 4 - [Date and Time]
+### Entry 6 - [October 10, 2026 – 5:30 PM]
 **What I did**:
+I worked on writing the documentation, answering all reflection and technical questions, and preparing the final submission.
 
 **Details**:
+Today I focused on completing the written parts of the assignment. I organized my development log, wrote the reflection answers, and explained the technical concepts based on my own code and output. I also reviewed the instructions again to make sure I didn’t miss any required section. After finishing the answers, I checked the formatting and made sure everything was clear and well‑written. This was the final step before submitting the assignment
 
 **Challenges**:
+It took time to write everything clearly and make sure my answers matched the code I actually wrote.
 
 **Solution**:
+I went through each part slowly, reviewed my code and output, and wrote the documentation step by step until everything was complete.
 
 **Time spent**:
-
----
-
-### Entry 5 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
-
-### Entry 6 - [Optional - Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+4 hour.
 
 ---
 
@@ -211,13 +239,17 @@
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [16 hours]
 
 **Most challenging part**:
+The hardest part for me was understanding how the code works, especially the waiting time logic and where exactly to update the timing values inside the scheduler. I also struggled with the final summary table because the processes kept repeating and the formatting looked messy until I fixed it.
 
 **Most interesting learning**:
+The most useful thing I learned was how multithreading actually works in practice—how each process runs inside its own thread, how the scheduler controls execution using the time quantum, and how context switches happen. It helped me understand how operating systems manage tasks .
 
 **What I would do differently next time**:
+Next time, I would start the assignment as soon as it is released so I have more time to understand each part without rushing. I would also document my work step‑by‑step instead of writing everything at the end, because documenting while working makes the process much easier and clearer.
+
 
 ---
 
@@ -237,7 +269,8 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[During this assignment, I learned how multithreading actually works in Java and how each process runs inside its own thread. I understood how Runnable is used to define the work of a thread and how Thread.start() begins the execution. I also learned that Thread.join() makes the main thread wait until the process finishes, which helped me control the order of execution. Using Thread.sleep() to simulate the time quantum was new to me, and it showed me how the scheduler pauses a thread. One thing that surprised me was how threads can run independently but still be managed in a queue like the ready queue in our simulation. Seeing the output change every time a thread started made the concept much clearer.]
+
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -245,7 +278,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part for me was calculating the waiting time correctly in Feature 3. I struggled to understand where exactly I should update lastEnqueueTime and how to make sure the waiting time increases only when the process re-enters the ready queue. At first, the table kept printing repeated processes, and the numbers were completely wrong. I also had several errors because the timing values were updated in the wrong place. This part took me the longest because I had to test the code many times and watch the output carefully. Understanding the logic behind waiting time was harder than I expected.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -253,7 +286,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I overcame the challenges by testing the code step by step and using System.out.println to see the actual values during execution. Every time something looked wrong, I printed the timing variables to understand what was happening. I re-read the README and the scheduler loop multiple times until I understood the flow of the program. I also tried different places to update lastEnqueueTime until I found the correct one inside addProcessToQueue(). For the repeated printing issue, I added an ArrayList to store each process only once. Testing after every small change helped me fix the errors without breaking other parts of the code.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -261,19 +294,19 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Multithreading is used in many real applications that I use every day. For example, web browsers like Chrome run each tab in a separate thread, similar to how each process in my simulation ran inside its own thread. In mobile apps, music continues playing while I scroll or open other screens, which is also done using threads. Games use threads to handle graphics, physics, and sound at the same time, just like how our scheduler switches between processes using a time quantum. Even operating systems use Round-Robin scheduling to give each program a fair amount of CPU time. Working on this assignment helped me understand how these systems manage multiple tasks smoothly.]
 
 ### Optional: What would you like to learn more about?
 
-[Any topics related to threading or operating systems that you're curious about?]
+[I would like to learn more about thread synchronization and how to prevent threads from accessing the same data at the same time. I also want to understand deadlocks and how they happen.]
 
 ### Optional: How confident do you feel about multithreading concepts now?
 
-[Beginner / Intermediate / Confident. What do you understand well? What needs more practice?]
+[I feel more overwhelmed at the beginning because even though I understand the basic concepts of multithreading, the practical implementation in this assignment was more complex. The code had many interactions and details that made it harder to follow at first. I needed to read the scheduler and the process flow several times before I understood how everything was connected. The structure of the code made me feel more confused than I expected, especially with the waiting time and the repeated printing issues. After finishing all the features, I feel more comfortable, but I still think I need more practice with real multithreading projects. Overall, I would describe my level as intermediate, because I understand the theory well but the practical part still needs more time and repetition.]
 
 ### Optional: Feedback on the assignment
 
-[Any comments? Was it helpful? Too easy or hard? Suggestions?]
+[The assignment was complicated and took a long time to understand all the connections between the classes and methods. The practical style of the project made it harder because I had to understand the code design before I could implement anything. If I had studied the structure and logic of the code earlier, the assignment would have been much easier. The amount of interactions inside the scheduler and the process class made the work more challenging at the beginning. I had to read the code multiple times until I understood how each part affected the other. Overall, the assignment was useful, but it required a lot of time to fully understand the design.]
 
 ---
 
@@ -293,7 +326,7 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[A process is a program with its own memory space, while a thread is a lightweight unit of execution that shares memory with other threads in the same process. In this assignment, the class named Process is only a simulation, and each one is actually executed by a real Java thread created using new Thread(process) inside addProcessToQueue(). Threads are faster to create and communicate because they share memory, unlike processes which have higher creation overhead. Using threads made the simulation easier and more efficient, especially when switching between processes during the time quantum.]
 
 ## Question 2: Ready Queue Behavior
 
@@ -305,15 +338,28 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, if a process does not finish within its time quantum, it is placed back into the ready queue to wait for another turn. In my output, process P3 had a large burst time, so it was re‑queued multiple times before finishing. Each time it exceeded the time quantum, the scheduler printed a message showing it being added again to the ready queue. This re‑queueing ensures fairness because no single process can take all the CPU time.]
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+[ ? P1 executing quantum [2000ms] 
+  ? Quantum progress: [███████████████] 100%
+  ? P1 completed quantum 2000ms │ Overall progress: [█████████░░░░░░░░░░░] 46%
+     Remaining time: 2316ms
+  ? P1 yields CPU for context switch
+
+  ? P1 added to ready queue │ Burst time: 4316ms *** priority: 10 
+  ? P1 executing quantum [2000ms] 
+  ? Quantum progress: [███████████████] 100%
+  ? P1 completed quantum 2000ms │ Overall progress: [██████████████████░░] 92%
+     Remaining time: 316ms
+  ? P1 yields CPU for context switch
+
+  ? P1 added to ready queue │ Burst time: 4316ms *** priority: 10]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[this output shows that P1 used its full quantum twice and still had remaining burst time, so the scheduler re‑queued it each time. Only after the third execution did P1 finish completely.]
 
 ## Question 3: Thread Lifecycle
 
@@ -323,15 +369,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [P1 is in the New state right when it is created inside addProcessToQueue(), before calling new Thread(process).start(). At this moment, the thread object exists but has not started running yet.]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [P1 becomes Runnable immediately after the scheduler calls thread.start() in the main loop. This means the thread is ready to run and waiting for CPU time.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [P1 enters the Running state when its run() method begins executing and it starts consuming its time quantum. This happens during the line where the scheduler prints P1 executing quantum [2000ms].]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [P1 enters the Waiting state when it calls Thread.sleep(timeQuantum) inside the run() method. Here, P1’s thread is sleeping to simulate CPU usage, while the main thread waits later using join().]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [P1 becomes Terminated when its remaining burst time reaches zero and the run() method finishes. In the output, this is shown when the scheduler prints P1 finished execution.]
 
 ## Question 4: Real-World Applications
 
@@ -341,32 +387,32 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [CPU Time Sharing in an Operating System]
 
 **Description**:
-[Describe the real-world scenario.]
+[Operating systems like Windows and Linux use Round‑Robin scheduling to divide CPU time among running programs. Each program acts like a “process,” similar to the processes in my simulation such as P1 and P2. The OS gives each program a small time quantum, then switches to the next one so the system stays responsive even when many applications are open.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round‑Robin ensures fairness because every program gets an equal chance to use the CPU. It also improves responsiveness, since no single program can block the CPU for too long. The context switch in the OS works just like the context switch in my simulation, where the scheduler moves from one thread to another after each quantum.]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Mobile App with Background Music and UI Updates]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[In mobile apps, background music can keep playing while the user scrolls, opens menus, or interacts with the interface. Each part of the app runs in its own thread: one thread for music, one for animations, and one for user input. This is similar to how each process in my simulation runs inside its own thread.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round‑Robin makes the app feel smooth because it gives each thread a fair share of CPU time. The music thread gets a quantum to play audio, then the UI thread gets a quantum to update the screen, and so on. This predictable switching prevents the app from freezing and keeps everything responsive.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.How threads run independently but are controlled by a scheduler.
+2.How Round‑Robin uses time quantum and context switches to share CPU time fairly.
+3.How waiting time and turnaround time are calculated in a scheduling system.
 
 **Concepts I need to study more:**
-1.
-2.
+1.Thread synchronization and how threads share data safely.
+2.Deadlocks and how they happen in multithreaded programs.
 
 ---
 
